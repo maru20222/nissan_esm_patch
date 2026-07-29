@@ -4,7 +4,7 @@ NISSAN ESM(日産電子サービスマニュアル) の既存 JavaScript が Win
 
 ## 概要
 
-- 変更対象は **3関数のみ** です。
+- 変更対象は **5項目** です。
 - 既存資産への影響を抑えるため、必要最小限の修正に限定しています。
 
 ## 変更点
@@ -93,9 +93,41 @@ function fncSieOpen(url) {
 }
 ```
 
+### `pcvehiclepage.hta`
+
+4.  `moveTo`,`resizeTo`をコメントアウト
+```
+	//esm_win.moveTo(0,0);
+	//esm_win.resizeTo(window.screen.availWidth,window.screen.availHeight);
+```
+
+### `index.html`
+
+5. `moveTo`,`resizeTo`が含まれるブロックをコメントアウト
+```
+//window.resizeTo(window.screen.availWidth,window.screen.availHeight);
+//if(request.getParameter("fromconsult") != "true" && request.getParameter("fromconsult") != true)
+//{
+//if((window.screen.Height)>640 && window.screen.width<860) 
+//{
+//window.moveTo(0,0);
+//window.resizeTo(800,window.screen.height-20);
+//}
+//if((window.screen.height<640) && window.screen.width > 800)
+//{
+//window.moveTo(0,0);
+//window.resizeTo(window.screen.width,600-20);
+//}
+//else
+//{
+//window.resizeTo(window.screen.Width,window.screen.Height-20);
+//}
+//}
+```
+
 ## 適用方法（概要）
 
-対象環境の元ファイルをバックアップしたうえで、上記3関数を対応箇所へ反映してください。
+対象環境の元ファイルをバックアップしたうえで、上記5項目を対応箇所へ反映してください。
 
 ## 注意事項
 
